@@ -19,6 +19,8 @@ Autofill for Supreme &amp; Shopify checkout.
 6. You're all set! Head over to a checkout page and try it out. 
 
 <br><br>
-To do
+
+To Dso:
+- [ ] Add Stripe checkout
 - [ ] Make an HTML popup to store user entered information instead of editing config file
 - [ ] 
