@@ -25,5 +25,5 @@ To Do:
 
 ### I will be making changes in the near future so make sure to watch this repository for updates. 
 
-Notes for the developer:
+Notes for the developer:<br><br>
   "default_popup": "popup.html",
