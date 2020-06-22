@@ -1,7 +1,6 @@
 # Autofill
 Autofill for Supreme &amp; Shopify checkout. 
 
-
 ** Please note that the checkout button will be clicked upon entering accurate payment information and the order will be processed.
 
 ## How to use
@@ -20,7 +19,8 @@ Autofill for Supreme &amp; Shopify checkout.
 
 <br><br>
 
-To Dso:
+To Do:
 - [ ] Add Stripe checkout
 - [ ] Make an HTML popup to store user entered information instead of editing config file
-- [ ] 
+
+### I will be making changes in the near future so make sure to watch it for updates. 
