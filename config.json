@@ -1,3 +1,26 @@
 {
-    
+  "profile":{
+    "name" : {
+      "firstName": "first",
+      "lastName": "last"
+    },
+    "contact": {
+      "email": "myemail@domain.com",
+      "tel": "123"
+    },
+    "address":{
+      "street": "123 Gilroy St",
+      "apt": "",
+      "zip": "12345",
+      "city": "city",
+      "state": "NC",
+      "country": "USA"
+    },
+    "payment": {
+      "cardNum": "1234123412341234",
+      "expMonth": "01",
+      "expYear": "2030",
+      "cvv": "123"
+    }
+  }
 }
