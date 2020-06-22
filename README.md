@@ -23,4 +23,7 @@ To Do:
 - [ ] Add Stripe checkout
 - [ ] Make an HTML popup to store user entered information instead of editing config file
 
-### I will be making changes in the near future so make sure to watch it for updates. 
+### I will be making changes in the near future so make sure to watch this repository for updates. 
+
+Notes for the developer:
+  "default_popup": "popup.html",

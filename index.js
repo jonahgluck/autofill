@@ -5,15 +5,15 @@ let profile = {
     lastName: "last",
   },
   contact: {
-    email: "myemail@domain.com",
-    tel: "123",
+    email: "email",
+    tel: "tel",
   },
   address: {
     street: "123 Gilroy St",
     apt: "",
     zip: "12345",
     city: "city",
-    state: "NC",
+    state: "AL",
     country: "USA",
     countryTypedOut: "United States",
   },
@@ -49,7 +49,7 @@ function fillInSupreme() {
   document.getElementsByName("commit")[0].click();
 }
 
-function fillInShopify() {
+async function fillInShopify() {
   document.getElementById("checkout_email").value = profile.contact.email;
   document.getElementById("checkout_shipping_address_first_name").value =
     profile.name.firstName;
@@ -74,11 +74,43 @@ function fillInShopify() {
   document.querySelector(".step__footer__continue-btn").click();
 }
 
+function clickButton() {
+  //need delay
+  try {
+    setTimeout(() => {
+      document.querySelector(".step__footer__continue-btn").click();
+    }, 3000);
+  } catch (err) {
+    setTimeout(clickButton, 6000);
+  }
+}
+
+function lastInfo() {
+  //need delay
+  try {
+    setTimeout(() => {
+      document.getElementById("number").value = profile.payment.cardNum;
+      document.getElementById(
+        "name"
+      ).value = `${profile.name.firstName} ${profile.name.lastName}`;
+      document.getElementById(
+        "expiry"
+      ).value = `${profile.payment.expMonth}/${profile.payment.expYear}`;
+      document.getElementById("verification_value").value = profile.payment.cvv;
+      document.querySelector(".step__footer__continue-btn").click();
+    }, 2000);
+  } catch (err) {
+    setTimeout(lastInfo, 10000);
+  }
+}
+
 window.onload = async function () {
   try {
     let value = await document.getElementById("order_billing_name");
     if (value == undefined) {
       fillInShopify();
+      clickButton();
+      lastInfo();
     } else {
       fillInSupreme();
     }
