@@ -10,7 +10,7 @@ Autofill for Supreme &amp; Shopify checkout.
 
 2. Edit the profile information at the top of index.js and save.
 
-3. [Click here](chrome://extensions/) and turn on developer mode in the top right corner.
+3. Navigate to chrome://extensions/ and turn on developer mode in the top right corner.
 
 4. After your developer account is setup, go to the extensions tab and click "Load unpacked".
 
