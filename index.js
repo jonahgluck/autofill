@@ -15,6 +15,7 @@ let profile = {
     city: "city",
     state: "NC",
     country: "USA",
+    countryTypedOut: "United States",
   },
   payment: {
     cardNum: "1234123412341234",
@@ -33,7 +34,7 @@ function fillInSupreme() {
   document.getElementById("bo").value = profile.address.street;
   document.getElementById("oba3").value = profile.address.apt;
   document.getElementById("order_billing_zip").value = profile.address.zip;
-  document.getElementById("order_billing_city").value = profile.address.state;
+  document.getElementById("order_billing_city").value = profile.address.city;
   document.getElementById("order_billing_state").value = profile.address.state;
   document.getElementById("order_billing_country").value =
     profile.address.country;
@@ -48,8 +49,40 @@ function fillInSupreme() {
   document.getElementsByName("commit")[0].click();
 }
 
-window.onload = function () {
-  if (url == "https://www.supremenewyork.com/checkout") {
-    fillInSupreme();
+function fillInShopify() {
+  document.getElementById("checkout_email").value = profile.contact.email;
+  document.getElementById("checkout_shipping_address_first_name").value =
+    profile.name.firstName;
+  document.getElementById("checkout_shipping_address_last_name").value =
+    profile.name.lastName;
+  document.getElementById("checkout_shipping_address_address1").value =
+    profile.address.street;
+  document.getElementById("checkout_shipping_address_address2").value =
+    profile.address.apt;
+  document.getElementById("checkout_shipping_address_city").value =
+    profile.address.city;
+  //coutry must be typed out
+  document.getElementById("checkout_shipping_address_country").value =
+    profile.address.countryTypedOut;
+  document.getElementById("checkout_shipping_address_province").value =
+    profile.address.state;
+  document.getElementById("checkout_shipping_address_zip").value =
+    profile.address.zip;
+  document.getElementById("checkout_shipping_address_phone").value =
+    profile.contact.tel;
+  //continue to shipping
+  document.querySelector(".step__footer__continue-btn").click();
+}
+
+window.onload = async function () {
+  try {
+    let value = await document.getElementById("order_billing_name");
+    if (value == undefined) {
+      fillInShopify();
+    } else {
+      fillInSupreme();
+    }
+  } catch (err) {
+    console.log(err);
   }
 };
