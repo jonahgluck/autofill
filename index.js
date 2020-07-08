@@ -107,7 +107,7 @@ function lastInfo() {
 window.onload = async function () {
   try {
     let value = await document.getElementById("order_billing_name");
-    if (value == undefined) {
+    if (value === undefined) {
       fillInShopify();
       clickButton();
       lastInfo();
